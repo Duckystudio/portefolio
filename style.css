@@ -349,114 +349,7 @@ html {
 }
 /* End of Section 2 */
 
-/* Section 3 */
-.section-3 {
-  background-color: #333;
-  padding: 5rem 0;
-  text-align: center;
-}
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-top: 10rem;
-}
-
-.gallery-link {
-  position: relative;
-  margin: 4rem 1rem;
-}
-
-.gallery-link::before {
-  content: "";
-  position: absolute;
-  top: 2vw;
-  left: 80%;
-  width: 0.2rem;
-  height: 0;
-  background-color: #fff;
-  z-index: 10;
-  transition: height 0.5s;
-}
-
-.gallery-link::after {
-  content: "";
-  position: absolute;
-  top: 30%;
-  left: 2rem;
-  width: 0;
-  height: 0.2rem;
-  background-color: #fff;
-  transition: width 0.5s;
-}
-
-.gallery-link:hover::before {
-  height: 80%;
-}
-
-.gallery-link:hover::after {
-  width: 90%;
-}
-
-.food-img {
-  width: 24vw;
-  height: 15vw;
-  object-fit: cover;
-  box-shadow: 0.3rem 0.3rem 0.1rem #e92929, 0.5rem 0.5rem 0.1rem #a2e946,
-    0.7rem 0.7rem 0.1rem #297ce9, 0.9rem 0.9rem 0.1rem #e92999;
-  transition: all 0.5s;
-}
-
-.gallery-link:hover .food-img {
-  box-shadow: 1rem 1rem 0.1rem #e92929, 2rem 2rem 0.1rem #a2e946,
-    3rem 3rem 0.1rem #297ce9, 4rem 4rem 0.1rem #e92999;
-  transform: scale(1.1);
-  filter: blur(0.5rem);
-  opacity: 0.5;
-}
-
-.food-name {
-  position: absolute;
-  top: 3rem;
-  left: 3rem;
-  font-size: 2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  color: #fff;
-  width: 0;
-  overflow: hidden;
-  transition: width 0.3s;
-}
-
-.gallery-link:hover .food-name {
-  width: 100%;
-  transition: width 1.5s 0.5s;
-}
-
-.food-description {
-  position: absolute;
-  bottom: 3vw;
-  left: 2rem;
-  width: 70%;
-  font-size: 1.5rem;
-  font-weight: 300;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  color: #fff;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s;
-}
-
-.gallery-link:hover .food-description {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 1s 1s;
-}
-/* End of Section 3 */
 
 /* Section 4 */
 .section-4 {
@@ -636,3 +529,251 @@ html {
   }
 }
 /* End of Responsive */
+.container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .6)),url(images/bg.jpeg) center no-repeat;
+  background-size: cover;
+}
+
+.heading {
+  color: #fff;
+  font-size: 70px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.heading::after {
+  content: '';
+  width: 5px;
+  height: 55px;
+  background-color: #fff;
+  position: absolute;
+  animation: blinking 1s 3s infinite;
+}
+
+@keyframes blinking {
+  0% {background-color: #fff}
+  50% {background-color: transparent}
+  100% {background-color: #fff}
+}
+
+.cards-wrapper {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card {
+  width: 280px;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: transform .5s;
+}
+
+@keyframes cardAnim {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+.card:nth-child(1) {
+  animation: cardAnim 2s 3s backwards;
+}
+
+.card:nth-child(2) {
+  animation: cardAnim 2s 3.5s backwards;
+}
+
+.card:nth-child(3) {
+  animation: cardAnim 2s 4s backwards;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.image-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: -110px;
+  z-index: 10;
+  border: 10px solid #eee;
+}
+
+.card h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 22px;
+  color: #555;
+  margin: 10px;
+}
+
+.job {
+  font-family: 'Montserrat', sans-serif;
+  color: #777;
+  font-weight: 300;
+}
+
+.about-me {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 14px;
+  width: 90%;
+  margin: 15px 0;
+  font-style: italic;
+  color: #444;
+  text-align: center;
+}
+
+.card button {
+  width: 120px;
+  padding: 7px;
+  margin: 10px 0;
+  background-color: tomato;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #eee;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, .4);
+}
+
+.card:hover button {
+  animation: buttonRotation 2s 1s linear;
+}
+
+@keyframes buttonRotation {
+  0% {transform: scale(1) rotateZ(0)}
+  5% {transform: scale(1.2) rotateZ(5deg)}
+  10% {transform: scale(1.2) rotateZ(-5deg)}
+  15% {transform: scale(1.2) rotateZ(5deg)}
+  20% {transform: scale(1.2) rotateZ(-5deg)}
+  25% {transform: scale(1.2) rotateZ(5deg)}
+  30% {transform: scale(1.2) rotateZ(-5deg)}
+  35% {transform: scale(1.2) rotateZ(5deg)}
+  40% {transform: scale(1.2) rotateZ(-5deg)}
+  45% {transform: scale(1.2) rotateZ(5deg)}
+  50% {transform: scale(1.2) rotateZ(-5deg)}
+  55% {transform: scale(1.2) rotateZ(5deg)}
+  60% {transform: scale(1.2) rotateZ(-5deg)}
+  65% {transform: scale(1.2) rotateZ(5deg)}
+  70% {transform: scale(1.2) rotateZ(-5deg)}
+  75% {transform: scale(1.2) rotateZ(5deg)}
+  80% {transform: scale(1.2) rotateZ(-5deg)}
+  85% {transform: scale(1.2) rotateZ(5deg)}
+  90% {transform: scale(1.2) rotateZ(-5deg)}
+  95% {transform: scale(1.2) rotateZ(5deg)}
+  100% {transform: scale(1) rotateZ(0)}
+}
+
+.social-icons {
+  width: 150px;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0 20px 0;
+  border-top: 1px solid #999;
+  padding-top: 20px;
+}
+
+.social-icons i {
+  font-size: 18px;
+}
+
+.fa-facebook-f {
+  color: #3b5999;
+}
+
+.fa-youtube {
+  color: #cd201f;
+}
+
+.fa-twitter {
+  color: #55acee;
+}
+
+.fa-google-plus-g {
+  color: #dd4b39;
+}
+
+@media(max-width: 1300px) {
+  .heading {
+      font-size: 65px;
+      width: 80%;
+  }
+
+  .cards-wrapper {
+      width: 100%;
+      top: 32%;
+  }
+
+  .image-top {
+      height: 200px;
+  }
+}
+
+@media(max-width: 1000px) {
+  .container {
+      height: 100%;
+  }
+  .heading {
+      width: 90%;
+  }
+
+  .cards-wrapper {
+      flex-wrap: wrap;
+      padding: 300px 0 200px 0;
+  }
+
+  .card {
+      margin: 0 30px 50px 30px;
+  }
+}
+
+@media(max-width: 700px) {
+  .heading {
+      font-size: 50px;
+  }
+
+  .heading::after {
+      height: 40px;
+  }
+}
+
+@media(max-width: 450px) {
+  .heading {
+      font-size: 40px;
+  }
+
+  .heading::after {
+      height: 33px;
+  }
+
+  .cards-wrapper {
+      padding: 250px 0 150px 0;
+  }
+}
+
+
